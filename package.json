@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Click and fill forms randomly on webpages till an error occurs",
   "main": "index.js",
-  "repository": "github:saltcorn/saltcorn",
+  "repository": "github:saltcorn/chaos-guinea-pig",
   "scripts": {
     "test": "jest"
   },
