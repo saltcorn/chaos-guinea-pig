@@ -119,7 +119,10 @@ const processResponse = async (res, url, state) => {
 
   const $ = cheerio.load(res.text);
 
-  var local_links = $("a[href]").filter((i, e) => isLocalURL(e.attribs.href));
+  var local_links = $("a[href]").filter(
+    (i, e) =>
+      isLocalURL(e.attribs.href) && !state.stop_urls.includes(e.attribs.href)
+  );
   var forms = $("form").filter((i, e) =>
     state.check_form_action(e.attribs.action)
   );
