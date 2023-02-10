@@ -8,12 +8,14 @@ class CrawlState {
     this.steps_left = o.steps || 20;
     this.log = [];
     this.app = o.app;
+    this.verbose = o.verbose;
   }
   req() {
     return request(this.app);
   }
   add_log(l) {
     this.log.push(l);
+    if (this.verbose) console.log(l);
   }
   check_form_action(action) {
     return !this.stop_form_actions.some((sfa) => action.includes(sfa));
